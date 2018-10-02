@@ -7,10 +7,19 @@ output:
 
 
 ## Loading and preprocessing the data
+```{r}
+act <- read.csv("activity.csv")
+totalEachDay <- tapply(act$steps,act$date,sum,na.rm=TRUE)
+```
 
 
 
 ## What is mean total number of steps taken per day?
+```{r}
+hist(totalEachDay)
+mean(totalEachDay)
+median(totalEachDay)
+```
 
 
 
